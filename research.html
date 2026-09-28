@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <title>Yian Yu - Research</title>
+    <style>
+        li {
+            margin-bottom: 0.4em;
+        }
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .research-fig {
+            display: block;
+            margin: 0.9em auto 0.25em auto;
+            max-width: min(920px, 100%);
+            height: auto;
+        }
+        .caption {
+            max-width: 920px;
+            margin: 0.15em auto 1.15em auto;
+            font-size: 0.92em;
+            line-height: 1.45;
+            color: #333;
+        }
+        table.directions {
+            border-collapse: collapse;
+            margin: 0.4em 0 1.4em 0;
+            max-width: 920px;
+        }
+        table.directions th,
+        table.directions td {
+            text-align: left;
+            vertical-align: top;
+            padding: 0.5em 0.9em 0.5em 0;
+            border-bottom: 1px solid #ddd;
+            line-height: 1.45;
+        }
+        table.directions th {
+            border-bottom: 1px solid #888;
+        }
+        table.directions td.dir {
+            font-weight: bold;
+            padding-right: 1.6em;
+            width: 16em;
+        }
+    </style>
+  </head>
+
+<body>
+<table summary="Page layout" id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+    <div class="menu-item" style="font-weight: bold;">Yian Yu</div>
+    <div class="menu-item"><a href="index.html">Home</a></div>
+    <div class="menu-item"><a href="research.html" class="current">Research</a></div>
+    <div class="menu-item"><a href="main-newly-updated.pdf">CV</a></div>
+  <div class="menu-item"><a href="https://scholar.google.com/citations?user=F8zLMmcAAAAJ&hl=en">GoogleScholar</a></div>
+    <div class="menu-item"><a href="https://www.researchgate.net/profile/Yian-Yu?ev=hdr_xprf">ResearchGate</a></div>
+    <div class="menu-item"><a href="https://orcid.org/0000-0001-9414-9890">ORCID</a></div>
+</td>
+<td id="layout-content">
+
+<h2>Research</h2>
+
+<p>
+I study multimodal temporal data from a statistical point of view.
+Solar observations and wearable accelerometry come from different instruments,
+but they share a common form: several signals recorded together, often irregularly,
+with dependence across time, across variables, and, for the Sun–Earth system, across space.
+The scientific targets — solar energetic particle events, proton flux, geomagnetic activity,
+gait trajectories, and abnormal symptoms — are defined on these joint signals.
+</p>
+
+<h2>Data sources and structure</h2>
+
+<h3>Wearable accelerometry</h3>
+
+<p>
+A laboratory gait mat records a short walk on a fixed path.
+Free-living studies use a waist-worn tri-axial accelerometer, which follows
+mediolateral, anteroposterior, and vertical acceleration while the person moves
+through ordinary surroundings. One participant can produce several gigabytes of signal,
+and subject, environment, and activity are mixed into the same record.
+</p>
+
+<img class="research-fig" src="figures/wearable-source.png" alt="Laboratory gait mat compared with a waist-worn tri-axial accelerometer and its mediolateral, anteroposterior, and vertical signals." />
+<p class="caption">
+From a laboratory gait mat to a body-worn accelerometer.
+The three colored traces are the mediolateral, anteroposterior, and vertical components of the recorded acceleration.
+</p>
+
+<p>
+From the raw acceleration I extract gait features — pace, rhythm, variability, asymmetry,
+and postural control — together with the center-of-mass path in each gait cycle.
+The result is a multivariate functional series.
+Features that describe the same step move together, so the covariance belongs to the data structure.
+</p>
+
+<img class="research-fig" src="figures/gait-features.png" alt="Multivariate gait-feature curves over a gait cycle and the correlation heatmap among those features." />
+<p class="caption">
+Gait features along a cycle, and the correlation among them.
+Strong correlation is typical. Step time, stance time, and swing time, for example, describe the same cycle and move together.
+</p>
+
+<h3>Solar and near-Earth measurements</h3>
+
+<p>
+Space-weather series come from several instruments at once.
+Active-region summaries (SHARP and SMHARP), flares, coronal mass ejections, proton flux,
+and soft X-ray flux describe the Sun.
+Geomagnetic indices (Kp, Dst, SYM-H, SME, SMR) and near-Earth solar-wind measurements
+(magnetic field, B<sub>z</sub>, speed, dynamic pressure, and electric field) describe the response at Earth.
+These series differ in sampling rate, units, and dynamic range, and storms appear as rare, simultaneous bursts.
+</p>
+
+<img class="research-fig" src="figures/sun-earth.jpg" alt="Illustration of the Sun, solar wind, coronal mass ejections, and Earth's magnetosphere." />
+<p class="caption">
+Sun–Earth interactions that shape the measurements used for space-weather forecasting.
+Illustration from <a href="https://svs.gsfc.nasa.gov/30481/">NASA Scientific Visualization Studio</a>.
+</p>
+
+<img class="research-fig" src="figures/geomagnetic-series.png" alt="Stacked time series of geomagnetic indices Kp, Dst, SYM-H, SME, and SMR with solar-wind variables B, Bz, speed, dynamic pressure, and electric field." />
+<p class="caption">
+Joint pattern of geomagnetic indices and near-Earth solar-wind measurements over the same interval.
+The series share storm-time bursts and differ in scale and resolution.
+</p>
+
+<h2>Statistical questions</h2>
+
+<p>
+Across both areas, the work asks how these signals should be represented and how their dependence should be described.
+</p>
+
+<table class="directions" summary="Statistical questions">
+  <tr>
+    <th>Theme</th>
+    <th>Statistical question</th>
+  </tr>
+  <tr>
+    <td class="dir">Functional and latent-variable representations</td>
+    <td>How should irregular, multimodal records be represented so that the shape of each trajectory is kept?</td>
+  </tr>
+  <tr>
+    <td class="dir">Multivariate time series, covariance, and latent states</td>
+    <td>How should dependence be described when series move together, change regime, and arrive at different rates?</td>
+  </tr>
+</table>
+
+<h2>Research directions</h2>
+
+<p>These questions point to three directions.</p>
+
+<table class="directions" summary="Research directions">
+  <tr>
+    <th>Direction</th>
+    <th>Statistical question</th>
+  </tr>
+  <tr>
+    <td class="dir">Structured learning</td>
+    <td>How can irregular, multimodal signals be aligned without discarding temporal and spatial dependence?</td>
+  </tr>
+  <tr>
+    <td class="dir">Interpretation</td>
+    <td>How should feature importance be defined when predictors are strongly correlated or function-valued?</td>
+  </tr>
+  <tr>
+    <td class="dir">Uncertainty</td>
+    <td>How can prediction sets remain calibrated under dependence, rare events, and distributional change?</td>
+  </tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
